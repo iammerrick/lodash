@@ -524,14 +524,14 @@
 
   // begin the minification process
   if (filterType || isMobile) {
-    fs.writeFileSync(path.join(__dirname, 'lodash.custom.js'), source);
+    fs.writeFileSync(path.join(process.cwd(), 'lodash.custom.js'), source);
     minify(source, 'lodash.custom.min', function(result) {
-      fs.writeFileSync(path.join(__dirname, 'lodash.custom.min.js'), result);
+      fs.writeFileSync(path.join(process.cwd(), 'lodash.custom.min.js'), result);
     });
   }
   else {
     minify(source, 'lodash.min', function(result) {
-      fs.writeFileSync(path.join(__dirname, 'lodash.min.js'), result);
+      fs.writeFileSync(path.join(process.cwd(), 'lodash.min.js'), result);
     });
   }
 }());
